@@ -1,0 +1,101 @@
+%   Borrowed from A. Shafiei
+%
+%   Copyright (c)  2023  A. Shafiei
+%   Permission is granted to copy, distribute and/or modify this document
+%    under the terms of the GNU Free Documentation License, Version 1.3
+%    or any later version published by the Free Software Foundation;
+%    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+%    A copy of the license is included in the section entitled "GNU
+%    Free Documentation License".
+
+\documentclass[aspectratio=169]{beamer}
+
+\usefonttheme{serif}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{mathtools, nccmath}
+\usepackage{amssymb, amsmath}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{euler}
+\usepackage{color,xcolor}
+\usepackage{fontspec}
+\usepackage{nameref}
+\usepackage{manfnt}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{docs/style}
+
+\usepackage{xepersian}
+\settextfont{Yas}
+\setdigitfont{Yas}
+%\setlength{\parskip}{\baselineskip}
+
+\input{docs/macros}
+\input{figs/figstyle}
+
+\title{بررسی \lr{Context Manager}ها در پایتون}
+\author{مهدی حق‌وردی}
+
+\institute{
+    \\
+    \includegraphics[height=1.2cm]{logos/logo}
+    %\\
+    %دانشگاه اصفهان
+}
+\date{}
+
+\begin{document}
+    
+    \begin{frame}[plain]
+        \begin{center}
+            به نام خدا
+        \end{center}
+        
+        \maketitle
+        
+        %\begin{center}
+        %{\footnotesize arash.shafiei@gmail.com}
+        %\end{center}
+        
+    \end{frame}
+    
+    \setcounter{framenumber}{0}
+    
+    %\input{docs/licence}
+    
+    \raggedleft
+    
+    %%%%%%%%%%%%
+    \begin{frame}{فهرست مطالب}
+        \begin{flushright}
+            \tableofcontents
+        \end{flushright}
+    \end{frame}
+    %%%%%%%%%%%%
+    
+    %%%%%%%%%%%%
+    \input{docs/chap01/chap01}
+    %\input{docs/chap02/chap02}
+    %\input{docs/chap03/chap03}
+    %\input{docs/chap04/chap04}
+    %\input{docs/chap05/chap05}
+    %\input{docs/chap06/chap06}
+    %\input{docs/chap07/chap07}
+    %\input{docs/chap08/chap08}
+    %\input{docs/chap09/chap09}
+    %%%%%%%%%%%%
+    
+    %%%%%%%%%%%%
+    %\section*{References}
+    %\begin{frame}<0>[noframenumbering]
+    %\bibliographystyle{apalike}
+    %\bibliography{docs/bib}
+    %\end{frame}
+    %%%%%%%%%%%%
+    
+\end{document}

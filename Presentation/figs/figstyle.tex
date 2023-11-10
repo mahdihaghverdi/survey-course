@@ -1,0 +1,75 @@
+\usetikzlibrary{arrows,calc}
+\usetikzlibrary{positioning,shapes,chains,fit}
+
+\tikzset{
+    %Define style for boxes
+    node/.style={
+        circle,
+        draw=black, thick,
+        align=center,
+    },
+    ss/.style={
+        circle,
+        draw=black,
+        align=center,
+    },
+    io/.style={
+        rounded corners,
+        draw=black,
+        align=center,
+    },
+    proc/.style={
+        rectangle,
+        draw=black,
+        align=center,
+    },
+    ifelse/.style={
+	ellipse,
+	draw=black,
+	align=center,
+    },
+    cond/.style={
+	diamond,
+	aspect = 3,
+	draw=black,
+	align=center,
+    },
+    cloudy/.style={
+	cloud,
+	cloud puffs=12,
+	cloud ignores aspect,
+	align=center,
+	draw=black,
+    },
+    txt/.style={
+        draw = none,
+        align = center,
+        font = \footnotesize,
+    },
+    coin/.style={
+        rectangle,
+        minimum height=1mm,
+        minimum width=1cm,
+        draw=black,
+        fill=black!20,
+        rounded corners
+    },
+    towercolor/.style={
+        fill=black!80
+    },
+    towerbase/.style={
+        trapezium,
+        trapezium angle=75,
+        trapezium stretches=true,
+        towercolor,
+        minimum width=7mm,
+        minimum height=2mm,
+    },
+    tower/.style={
+        rectangle,
+        rounded corners,
+        towercolor,
+        minimum width=2mm,
+        minimum height=26mm,
+    },
+}

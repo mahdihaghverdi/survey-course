@@ -1,0 +1,27 @@
+\documentclass{auto}
+\usepackage{tikz}
+\begin{document}
+\newcommand\Hsize{\fontsize{40pt}{40pt}\selectfont}
+\begin{tikzpicture}
+    \draw[->] (-0.3,0) -- (32.2,0) node[right] {\Hsize $x$};
+    \draw[->] (0,-0.3) -- (0,32.2) node[above] {\Hsize $f(x)$};
+    
+    \draw[domain=0:32,smooth,variable=\x,violet, thick] plot ({\x},{1});
+    \node[txt] (const) at (31,1.7) {\Hsize $f(x)=1$};
+
+    \draw[domain=1:32,smooth,variable=\x,blue, thick] plot ({\x},{ln(\x)});
+    \node[txt] (lnx) at (30,4.2) {\Hsize $f(x)=\ln(x)$};
+    
+    \draw[domain=0:32,smooth,variable=\x,cyan, thick] plot ({\x},{\x});
+    \node[txt] (x) at (27.5,30) {\Hsize $f(x)=x$};
+    
+    \draw[domain=1:12.5,smooth,variable=\x,green, thick] plot ({\x},{\x*ln(\x)});
+    \node[txt] (x) at (16.2,30) {\Hsize $f(x)=x \ln(x)$};
+    
+    \draw[domain=0:5.6,smooth,variable=\x,orange, thick] plot ({\x},{pow(\x,2)});
+    \node[txt] (x) at (8.2,30) {\Hsize $f(x)=x^2$};
+    
+    \draw[domain=0:5,smooth,variable=\x,red, thick] plot ({\x},{pow(2,\x});
+    \node[txt] (x) at (6,33) {\Hsize $f(x)=2^x$};
+\end{tikzpicture}
+\end{document}
