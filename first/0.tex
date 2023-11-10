@@ -1,0 +1,66 @@
+\documentclass[a5paper]{article}
+
+\usepackage{array}
+% center the p columns and m --------------------------------------------------------------
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcounter{num}
+\setcounter{num}{1}
+\renewcommand{\arraystretch}{1.40}
+
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{xepersian}
+\settextfont{Yas}
+
+\begin{document}
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            \multicolumn{2}{|c|}{شماره گروه} & \multicolumn{3}{|c|}{نام مستعار گروه (اختیاری)} \\
+             \hline
+             \multicolumn{2}{|c|}{2} & \multicolumn{3}{|c|}{-} \\
+             \hline
+             \multicolumn{2}{|c|}{نام و نام خانوادگی} & 
+             شماره دانشجویی
+             &
+             گرایش
+             &
+             وضعیت \\
+             \hline
+             \arabic{num} \stepcounter{num} &
+             فاطمه علی‌ملکی &
+             4003623029&
+             شبکه-نرم‌افزار&
+              نماینده‌ی تیم\\
+             \hline
+             \arabic{num}\stepcounter{num} &
+مهدی حق‌وردی&
+۴۰۰۳۶۱۳۰۲۳&
+شبکه-نرم‌افزار&
+عضو تیم\\
+\hline
+             \arabic{num}\stepcounter{num} &
+محمدحسین چهکندی&
+4003613019&
+هوش-شبکه&
+عضو تیم\\
+\hline
+             \arabic{num}\stepcounter{num} &
+خدیجه نظری&
+4003633025&
+نرم‌افزار-شبکه&
+عضو تیم\\
+\hline
+             \arabic{num}\stepcounter{num} &
+امیررضا جهانگیری&
+۴۰۰۳۶۱۳۰۱۷&
+نرم‌افزار-شبکه&
+عضو تیم\\
+\hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\end{document}
