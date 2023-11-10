@@ -10,9 +10,9 @@
 \item[-]<1-> Here we take the sentence structure and we make sure that \textit{it makes sence}
 
 \begin{itemize}
-    \item<2-> whether to Python
-    semantics
-    \item<3-> or whether for example to math arithmatic expression rules (e.g. parenthesis).
+\item<2-> whether to Python
+semantics
+\item<3-> or whether for example to math arithmatic expression rules (e.g. parenthesis).
 \end{itemize}
 
 \item[-]<4> In 2006 adding ast to python was done through something called \href{https://asdl.sourceforge.net/}{Zephyr ASDL} rule or grammer: 
@@ -40,11 +40,12 @@ expr = BoolOp(boolop op, expr* values)
 \begin{lstlisting}[language=python]
 Module(
     body=Assign(
-        targets=[Name(id='x', ctx=Store())], 
-        value=BinOp(
-            left=Num(n=3), 
-            op=Add(), 
-            right=Num(n=2))
+            targets=[Name(id='x', ctx=Store())], 
+            value=BinOp(
+                left=Num(n=3), 
+                op=Add(), 
+                right=Num(n=2)
+            )
         )
     ]
 )
