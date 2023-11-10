@@ -8,7 +8,18 @@
 %    A copy of the license is included in the section entitled "GNU
 %    Free Documentation License".
 
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169, dvipsnames, svgnames, x11names]{beamer}
+
+% URLs and hyperlinks ---------------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=NavyBlue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{xurl}
+%---------------------------------------------------
 
 \usefonttheme{serif}
 \usepackage{graphicx}
@@ -30,19 +41,15 @@
 \usepackage{algorithmicx}
 \usepackage{docs/style}
 
-\usepackage{xepersian}
-\settextfont{Yas}
-\setdigitfont{Yas}
-
 \input{docs/macros}
 \input{figs/figstyle}
 
-\title{کامپایلر سی‌پایتون چگونه کار می‌کند؟}
-\author{مهدی حق‌وردی}
+\title{How CPython Compiler Works}
+\author{Mahdi Haghverdi}
 
 \institute{
 \\\includegraphics[height=1.2cm]{logos/logo}\\
-دانشگاه اصفهان
+Isfahan University
 }
 \date{}
 
@@ -50,7 +57,7 @@
     
 \begin{frame}[plain]
 \begin{center}
-به نام خدا
+In the name of Allah
 \end{center}
 \maketitle
 \end{frame}
@@ -58,16 +65,62 @@
 \setcounter{framenumber}{0}
 \raggedleft
 
-\begin{frame}{فهرست مطالب}
+\begin{frame}{Content}
 \begin{flushleft}
 \tableofcontents
 \end{flushleft}
 \end{frame}
 
-\section{\lr{Overview}}
-\section{\lr{Decoding}}
-\section{\lr{Tokenizing}}
-\section{\lr{Parsing}}
-\section{\lr{Abstract Systax Tree}}
-\section{\lr{Compiling}}
+\section{Overview}
+\begin{frame}{Overview}
+\begin{itemize}
+\item[-]
+Which steps does CPython takes to compile your source code?
+\item[-]
+Why these steps?
+\item[-]
+How they are done?
+\end{itemize}
+\end{frame}
+
+\subsection{Diagram}
+\begin{frame}{Diagram}
+\begin{itemize}
+\item[-] 
+{\small \ttfamily 
+----------------------------------------------------------- \\
+| Decoding -> Tokenizing -> Parsing -> AST | -> Compiling | \\
+----------------------------------------------------------- \\
+}
+
+\item[-]
+Front-end: Decoding, Tokenizing, Parsing and AST
+
+\item[-]
+Back-end: Compiling
+\end{itemize}
+\end{frame}
+
+\subsection{Why front-end and back-end?}
+\begin{frame}{Why front-end and back-end?}
+\begin{itemize}
+\item[-]
+We’ve got a front-end and a back-end part in this process.
+
+\item[-]
+front-end: getting down to the AST
+
+\item[-]
+back-end: to get the generated AST and compile it down to something
+
+\item[-]
+good example is \href{https://www.pypy.org/}{PyPy} which is a front-end for Python
+\end{itemize}
+\end{frame}
+
+\section{Decoding}
+\section{Tokenizing}
+\section{Parsing}
+\section{Abstract Systax Tree}
+\section{Compiling}
 \end{document}
