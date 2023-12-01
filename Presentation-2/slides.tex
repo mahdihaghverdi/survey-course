@@ -8,37 +8,26 @@
 %    A copy of the license is included in the section entitled "GNU
 %    Free Documentation License".
 
-\documentclass[aspectratio=169, dvipsnames, svgnames, x11names]{beamer}
+\documentclass[
+    aspectratio=169,
+    dvipsnames,
+    svgnames,
+    x11names
+]{beamer}
 
 % URLs and hyperlinks ---------------------------------------
 \usepackage{hyperref}
 \hypersetup{
-colorlinks=true,
-linkcolor=NavyBlue,
-filecolor=magenta,      
-urlcolor=blue,
+    colorlinks=true,
+    linkcolor=NavyBlue,
+    filecolor=magenta,      
+    urlcolor=blue,
 }
 \usepackage{xurl}
 %---------------------------------------------------
 
 \usefonttheme{serif}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\usepackage{mathtools, nccmath}
-\usepackage{amssymb, amsmath}
-\usepackage{xspace}
-\usepackage{tikz}
-\usepackage{standalone}
-\usepackage{euler}
-\usepackage{color,xcolor}
-\usepackage{fontspec}
-\usepackage{nameref}
-\usepackage{manfnt}
 \usepackage{listings}
-\usepackage{xcolor}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\usepackage{algorithmicx}
 \usepackage{docs/style}
 
 \usepackage{xepersian}
@@ -67,8 +56,16 @@ urlcolor=blue,
 \raggedleft
 
 \begin{frame}{فهرست مطالب}
-\begin{flushleft}
+\begin{flushright}
 \tableofcontents
-\end{flushleft}
+\end{flushright}
 \end{frame}
+
+\include{docs/parts.tex}
+\include{docs/tables.tex}
+\include{docs/counters.tex}
+\include{docs/maths.tex}
+\include{docs/refs-cites.tex}
+\include{docs/tableof.tex}
+\include{docs/tradpoem.tex}
 \end{document}
