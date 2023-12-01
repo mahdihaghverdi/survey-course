@@ -1,0 +1,85 @@
+\section{Tokenizing - ``Text" to ``Words"}
+\begin{frame}{Tokenizing - ``Text" to ``Words"}
+\begin{itemize}
+{\LARGE \item[-] Take the text and break it up into words}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tokenizing - ``Text" to ``Words" (Cont'd)}
+\begin{itemize}
+\item[-]<1>
+At this point we have our text, but we’ve got just a bunch of characters following each other
+
+\item[-]<2> NOW we do \textit{tokenizing}
+
+which the term \textit{token} is just a fancy word for words.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Tokenizing - ``Text" to ``Words" (Cont'd)}
+\begin{flushleft}
+How do we know to break the word? For instance in english language, its based on a space, but for programs it
+does not make sence. 
+
+i.e. there's is no diffrenece between:
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+print((lambda x: x*2 - 1)(2))  # 3
+\end{lstlisting}
+and
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+print((lambda    x: x * 2-    1)(2))  # 3
+\end{lstlisting}
+these should be tokenized like:
+\end{flushleft}
+\end{frame}
+
+\begin{frame}[fragile]{Tokenizing - ``Text" to ``Words" (Cont'd)}
+\begin{flushleft}
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+import shlex
+print(list(shlex.shlex(
+    'print((lambda x: x*2 - 1)(2))  # 3'
+)))
+
+print(list(shlex.shlex(
+    'print((lambda    x: x * 2-    1)(2))  # 3'
+)))
+\end{lstlisting}
+as
+\begin{lstlisting}
+['print', '(', '(', 'lambda', 'x', ':', 'x',
+'*', '2', '-', '1', ')', '(', '2', ')', ')']
+\end{lstlisting}
+\end{flushleft}
+\end{frame}
+\subsection{{\ttfamily tokenize} library}
+
+\begin{frame}[fragile]{{\ttfamily tokenize} library}
+\begin{lstlisting}[language=bash, numbers=none]
+$ echo 'print((lambda x: x*2-1)(2)) # 3' | python -m tokenize -e
+1,0-1,5:            NAME           'print'        
+1,5-1,6:            LPAR           '('            
+1,6-1,7:            LPAR           '('            
+1,7-1,13:           NAME           'lambda'       
+1,17-1,18:          NAME           'x'            
+1,18-1,19:          COLON          ':'            
+1,20-1,21:          NAME           'x'            
+1,22-1,23:          STAR           '*'            
+1,24-1,25:          NUMBER         '2'            
+1,25-1,26:          MINUS          '-'            
+1,30-1,31:          NUMBER         '1'            
+1,31-1,32:          RPAR           ')'            
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=bash, numbers=none]
+1,32-1,33:          LPAR           '('            
+1,33-1,34:          NUMBER         '2'            
+1,34-1,35:          RPAR           ')'            
+1,35-1,36:          RPAR           ')'            
+1,38-1,41:          COMMENT        '# 3'          
+1,41-1,42:          NEWLINE        '\n'           
+2,0-2,0:            ENDMARKER      ''   
+\end{lstlisting}
+\end{frame}

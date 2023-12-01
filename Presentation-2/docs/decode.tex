@@ -1,0 +1,64 @@
+\section{Decoding - ``Bytes" to ``Text"}
+\begin{frame}{Decoding - ``Bytes" to ``Text"}
+\begin{itemize}
+{\LARGE \item[-] Translate bytes from disk to actual text}
+\end{itemize}
+\end{frame}
+
+\subsection{Encoding Declaration}
+\begin{frame}{Encoding Declaration}
+\begin{itemize}
+\item[-] As of \href{https://peps.python.org/pep-0263/}{PEP 263}, you can specify the encoding of your Python module (basically a module is a text
+file which python code is written into) at the very top line of the file something like:
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Encoding Declaration (Cont'd)}
+
+\begin{flushleft}
+Declaration:
+\begin{lstlisting}
+#!/usr/bin/python
+# -*- coding: <encoding name> -*-
+\end{lstlisting}
+\end{flushleft}
+
+\begin{flushleft}
+e.g.
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+#!/usr/bin/python
+# -*- coding: ascii -*-
+
+import math
+print(math.sin(math.radians(90)))  # 1.0
+\end{lstlisting}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}[fragile]{Encoding Declaration (Cont'd)}
+\begin{flushleft}
+Which gets compiled like this:
+\begin{lstlisting}[language=python]
+re.compile("conding[:=]\s*([-\w.]+)")
+\end{lstlisting}
+\end{flushleft}
+\end{frame}
+
+\subsection{Default encoding and Non-ASCII characters}
+\begin{frame}{Default Encoding and Non-ASCII Characters}
+\begin{itemize}
+\item[-]<1>
+From \href{https://peps.python.org/pep-3120/}{PEP 3120} UTF-8 is considered as the default enconding, and along with this with \href{https://peps.python.org/pep-3131/}{PEP 3131}
+
+\item[-]<2>
+Python supports Non-ASCII identifiers also, this means that you can use french or germen alphabet
+(with accent) in your variable names, like:
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Default Encoding and Non-ASCII Characters (Cont'd)}
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+löwis = 'Löwis'
+print(löwis)
+\end{lstlisting}
+\end{frame}

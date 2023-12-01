@@ -1,0 +1,54 @@
+\section{Abstract Systax Tree - ``Sentence" to ``Semantics"}
+\begin{frame}{Abstract Systax Tree - ``Sentence" to ``Semantics"}
+\begin{itemize}
+{\LARGE \item[-] Take the sentences and figures out what the heck you are saying}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Abstract Systax Tree - ``Sentence" to ``Semantics" (Cont'd)}
+\begin{itemize}
+\item[-]<1-> Here we take the sentence structure and we make sure that \textit{it makes sence}
+
+\begin{itemize}
+\item<2-> whether to Python
+semantics
+\item<3-> or whether for example to math arithmatic expression rules (e.g. parenthesis).
+\end{itemize}
+
+\item[-]<4> In 2006 adding ast to python was done through something called \href{https://asdl.sourceforge.net/}{Zephyr ASDL} rule or grammer: 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Abstract Systax Tree - ``Sentence" to ``Semantics" (Cont'd)}
+\begin{flushleft}
+\begin{lstlisting}[language=bash]
+expr = BoolOp(boolop op, expr* values)
+     | BinOp(expr left, operator op, expr right)
+     | UnaryOp(unaryop op, expr operand)
+     | Lambda(arguments args, expr body)
+     | IfExp(expr test, expr body, expr orelse)
+     | Dict(expr* keys, expr* values)
+     | Set(expr* elts)
+     | ListComp(expr elt, comprehension* generators)
+\end{lstlisting}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}[fragile]{Abstract Systax Tree - ``Sentence" to ``Semantics" (Cont'd)}
+\begin{flushleft}
+{\ttfamily x = 2 + 3} is:
+\begin{lstlisting}[language=python]
+Module(
+    body=Assign(
+            targets=[Name(id='x', ctx=Store())], 
+            value=BinOp(
+                left=Num(n=3), 
+                op=Add(), 
+                right=Num(n=2)
+            )
+        )
+    ]
+)
+\end{lstlisting}
+\end{flushleft}
+\end{frame}

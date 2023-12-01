@@ -1,0 +1,37 @@
+\section{Compiling - ``Sematics" to ``Bytecode"}
+\begin{frame}{Compiling - ``Sematics" to ``Bytecode"}
+\begin{itemize}
+{\LARGE \item[-] Take the AST and generates the bytecode to be executed}
+\end{itemize}
+\end{frame}
+
+\subsection{Bytecode}
+\begin{frame}{Bytecode}
+\begin{itemize}
+\item[-] Python implementation detail  \footnote{t means it may change in every minor release and you must not rely on what you have now
+and to expect to have that in the future}
+
+\item[-] Stack-based
+\item[-] (Python 3.9 and before) 101 instructions
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Bytecode (Cont'd)}
+\begin{flushleft}
+\begin{lstlisting}[language=python, keywordstyle=\color{Mulberry}\textbf]
+from dis import dis  # disassembler
+
+def func(): x = y + 2
+
+dis(func.__code__)
+
+# output:
+    1   0 LOAD_GLOBAL   0 (y)
+        2 LOAD_CONST    1 (2)
+        4 BINARY_ADD
+        6 STORE_FAST    0 (x)
+        8 LOAD_CONST    0 (None)
+       10 RETURN_VALUE
+\end{lstlisting}
+\end{flushleft}
+\end{frame}

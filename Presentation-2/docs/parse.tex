@@ -1,0 +1,44 @@
+\section{Parsing - ``Words" to ``Sentence"}
+\begin{frame}{Parsing - ``Words" to ``Sentence"}
+\begin{itemize}
+{\LARGE \item[-] Take the words and make sentences out of them}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Parsing - ``Words" to ``Sentence" (Cont'd)}
+\begin{itemize}
+\item[-]<1-> Now we have broken everything into words, we can care about how to structure our sentences
+and make them meaningful following specific grammer rules. 
+
+\item[-]<2->
+In parsing we use a grammer
+to define a structure, you can check Python grammer in \url{https://github.com/python/cpython/tree/main/Grammar}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Parsing - ``Words" to ``Sentence" (Cont'd)}
+\begin{flushleft}
+This is a piece of Python grammer (version 3.9)
+\begin{lstlisting}[numbers=none]
+stmt: simple_stmt | compound_stmt
+simple_stmt: small_stmt (';' small_stmt)* [';'] NEWLINE
+small_stmt: (expr_stmt | del_stmt | pass_stmt | flow_stmt |
+import_stmt | global_stmt | nonlocal_stmt | assert_stmt)
+3
+del_stmt: 'del' exprlist
+pass_stmt: 'pass'
+flow_stmt: break_stmt | continue_stmt | return_stmt | raise_stmt |
+yield_stmt
+break_stmt: 'break'
+\end{lstlisting}
+\end{flushleft}
+\end{frame}
+
+\begin{frame}{Parsing - ``Words" to ``Sentence" (Cont'd)}
+\begin{itemize}
+\item[-]<1> Before python 3.9’s PEG parser, Python parser was a LL(1) parser
+
+\item[-]<2> It was probably was oldest python code which was written by “Guido van Rossum” and hadn’t changed way back since
+Decemeber of 1998 :-)
+\end{itemize}
+\end{frame}

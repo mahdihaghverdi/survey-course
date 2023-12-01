@@ -1,0 +1,52 @@
+\section{Overview}
+\begin{frame}{Overview}
+\begin{itemize}
+\item[-]
+Which steps does CPython take to compile your source code?
+\item[-]
+Why these steps?
+\item[-]
+How they are done?
+\end{itemize}
+\end{frame}
+
+\subsection{Diagram}
+\begin{frame}{Diagram}
+\begin{itemize}
+\item[-] 
+{\small \ttfamily 
+----------------------------------------------------------- \\
+| Decoding -> Tokenizing -> Parsing -> AST | -> Compiling | \\
+----------------------------------------------------------- \\
+}
+
+\item[-]
+Front-end: Decoding, Tokenizing, Parsing and AST
+
+\item[-]
+Back-end: Compiling
+\end{itemize}
+\end{frame}
+
+\subsection{Explantion}
+\begin{frame}{Explanation}
+\begin{itemize}
+\item[-]<1->
+We’ve got a front-end and a back-end part in this process.
+
+\item[-]<2->
+Front-end: Getting down to the AST
+
+\item[-]<3->
+Back-end: Get the generated AST and compile it down to something
+
+\item[-]<4->
+Good example is \href{https://www.pypy.org/}{PyPy} which is a front-end for Python
+
+\item[-]<5->
+Ease of writing the code
+
+\item[-]<6->
+A better view to the process
+\end{itemize}
+\end{frame}
