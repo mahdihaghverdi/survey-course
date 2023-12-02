@@ -1,3 +1,4 @@
 https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Sectioning_commands
 https://en.wikipedia.org/wiki/TeX
 https://en.wikibooks.org/wiki/LaTeX/Counters
+https://github.com/mahdihaghverdi/LaTeX/tree/master/Math/Math2OnlyFormulas
