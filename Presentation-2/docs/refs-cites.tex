@@ -132,13 +132,31 @@ OS must schedule and dispatch...
 \end{itemize}
 \end{frame}
 
-\begin{frame}{فهرست منابع}
+\begin{frame}{چگونه}
 \begin{itemize}\itemr
 \item[-]
-برای یک مقاله یا پایان‌نامه، وجود فهرست منابع کامل و ارجاع به موقع به آنها بسیار ضروری‌ست.
+ابتدا فایلی با نام دلخواد (مثلا \lr{ref}) و پسوند \lr{\texttt{bib}} بسازید.
 
 \item[-]
-معمولا برای فهرست منابع پایان‌نامه‌ها و مقالات، دانشگاه‌ها و ژورنال‌ها قواعد خاص خود را دارند که در اختیار دانشجویان یا نویسندگان مقاله قرار می‌دهند.
+در این فایل تمامی اطلاعات مربوط به منابع را ذخیره می‌کنیم.
+
+\item[-]
+دو دستور زیر را در انتهای فایل سند خود قرار دهید.
+\begin{itemize}\itemr
+\item[+] \lr{\texttt{\textbackslash bibliographystyle\{style\}}}
+\item[+] \lr{\texttt{\textbackslash bibliography\{ref\}}}
+\end{itemize}
+\item[-]
+که بجای 
+\lr{\texttt{style}}
+میتوان مقادیر زیادی از جمله
+\lr{\texttt{plain}}،
+\lr{\texttt{unsrt}}،
+\lr{\texttt{alpha}}،
+\lr{\texttt{apalike}} و
+\lr{\texttt{ieeetr}}
+و...
+را قرار داد. این قالب‌ها بر چگونگی نمایش منابع در خروجی کنترل دارند.
 \end{itemize}
 \end{frame}
 
