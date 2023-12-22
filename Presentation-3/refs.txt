@@ -1,0 +1,10 @@
+https://www.itpro.com/hardware/components/cpu-architectures-whats-the-difference-between-arm-and-x86-and-why-does-it-matter#section-arm-vs-x86-instruction-sets
+
+https://en.wikipedia.org/wiki/X86
+
+https://en.wikipedia.org/wiki/ARM_architecture_family#64/32-bit_architecture
+
+https://en.wikipedia.org/wiki/Intel_8008
+
+https://en.wikipedia.org/wiki/ARM_architecture_family
+
