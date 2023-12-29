@@ -48,6 +48,59 @@
 \end{figure}
 \end{frame}
 
+\begin{frame}[fragile]{\lr{Preprocessor}}
+\begin{itemize}\itemr
+\item[-]
+زبان‌های کهنی مثل \lr{C} و \lr{C++} سیستم \lr{moduling} و ساختاربندی منظمی برای جدا کردن \lr{source code}هایشان نداشتند.
+
+\item[-]
+اما زبان‌های جدیدتر مثل \lr{Python} چنین سیستمی را دارند.
+
+\begin{latin}
+\begin{lstlisting}[language=python]
+import math
+from csv import reader, writer
+\end{lstlisting}
+\end{latin}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\lr{Preprocessor}}
+\begin{itemize}\itemr
+\item[-]
+به همین دلیل، آنها نیاز داشتند که وقتی برنامه‌ای که نوشته‌اند را به چندین فایل تقسیم کرده‌اند، کامپایل کنند، برنامه‌ای تمام \lr{source code}هایشان را به یک 
+\lr{source code}
+واحد تبدیل کرده و آن را به کامپایلر بدهند.
+
+\item[-]
+که بخاطر این نیاز، نرم‌افزاری به نام 
+\lr{Preprocessor}
+نوشته شد.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\lr{Preprocessor}}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth, height=0.7\textheight]{docs/images/include}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{\lr{Preprocessor}}
+\begin{itemize}\itemr
+\item[-]
+با \lr{Preprocessor}ها می‌توان ماکرو به زبان اضافه کرد.
+
+\vspace{5mm}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth, height=0.5\textheight]{docs/images/define}
+\end{center}
+\end{figure}
+\end{itemize}
+\end{frame}
+
 \begin{frame}{یک سیستم پردازشگر زبان - \lr{Compiler}}
 \begin{figure}[H]
 \begin{center}
