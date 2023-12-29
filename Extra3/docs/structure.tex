@@ -124,3 +124,42 @@
 \end{figure}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{تحلیل معنایی \lr{(Semantic Analysis)}}
+\begin{itemize}\itemr
+\item[-]
+درخت تولید شده در مرحله‌ی قبل، به این قسمت فرستاده می‌شود.
+
+\item[-]
+در این قسمت، درخت تولید شده با اطلاعاتی دیگری همچون 
+\lr{type}
+متغیر‌ها بررسی می‌شود، و اگر تداخلی با زبان داشت، گزارش می‌شود. برای مثال یک زبان اجازه جمع شدن یک 
+\lr{\texttt{float}}
+با یک
+\lr{\texttt{int}}
+را نمی‌دهد که در این مرحله این اشتباه کشف و گزارش می‌شود.
+
+\item[-]
+همینطور، این قسمت اگر بتواند
+\lr{type case}
+مناسبی را انجام دهد، این کار را می‌کند. در مثال ما، متغیر‌های 
+\lr{\texttt{position}}،
+\lr{\texttt{initial}}
+و 
+\lr{\texttt{rate}}
+از نوع
+\lr{\texttt{float}}
+تعریف شده‌اند و عدد 
+\lr{\texttt{60}}
+هم باید به 
+
+\lr{\texttt{float}}
+تبدیل می‌شود.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textwidth, height=0.31\textheight]{docs/images/semantic}
+\end{center}
+\end{figure}
+\end{itemize}
+\end{frame}
