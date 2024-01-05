@@ -18,15 +18,9 @@
 \hfill
 \begin{tabular}{c}\toprule
 \vspace{0.1cm}
-\scriptsize \bfseries ریاضی و جامعه\\
+\scriptsize \bfseries روش پژوهش و ارائه\\
 \vspace{0.1cm}
-\scriptsize
-شاپا (چاپی): 2345-6493، شاپا(الکترونیکی): 2345-6507 \\
-\vspace{0.1cm}
-\scriptsize
-جلد x، شماره x (1400)، صص. xx-xx\\
-\scriptsize
-\copyright{} 1xxx دانشگاه اصفهان \\ \bottomrule
+\copyright{} \lr{1xxx} دانشگاه اصفهان \\ \bottomrule
 \end{tabular}
 \hfill
 \begin{tabular}{c}
@@ -98,8 +92,8 @@
         \rule{\textwidth}{0.5pt}
     }}
    \def\@evenfoot{\normalfont\small\thepage
-     \hfill \scriptsize{\url{http://dx.doi.org/10.22108/MSCI.xxxx}}\hfill}
-    \def\@oddfoot{\normalfont\small\hfill\scriptsize{\url{http://dx.doi.org/10.22108/MSCI.xxxx}}\hfill\thepage}
+     \hfill \scriptsize{}\hfill}
+    \def\@oddfoot{\normalfont\small\hfill\scriptsize{}\hfill\thepage}
  }%   
 \def\enddoc@text{%
 \ifx\@empty\@translators \else\@settranslators\fi
@@ -156,24 +150,22 @@
 \pagestyle{ijheadings}
 \seriesno{1}
 \issueno{1}
-\publicationname{نشریه ریاضی و جامعه}
-\title{عنوان مقاله}
-\author[نویسنده اول و نویسنده دوم ، مترجم ]
-{ نویسنده اول و $^*$ نویسنده دوم\\
-اگر مقاله به زبان دیگری باشد در اینجا نام مترجم آورده شود}
+\publicationname{}
+\title{معماری کامپیوتر \lr{(Computer Architecture)}}
+\author{
+فاطمه علی‌ملکی، امیررضا جهانگیری، محمدحسین چهکندی، مهدی حق‌وردی و خدیجه نظری
+}
 
 \thanks{
-عبارات و کلمات کليدي: {کلمات کلیدی آورده شود.}\\
-دبیرتخصصی رابط: -------------\\  
-نوع مقاله: ----------------\\
-تاریخ دریافت: 1400/xx/xx
+عبارات و کلمات کليدي: {معماری کامپیوتر، واحد پردازش، \lr{x86}، \lr{arm}، \lr{qbit}}\\
+دبیرتخصصی رابط: استاد دکتر فریا نصیری مفخم\\  
+نوع مقاله: تکلیف کلاسی\\
+تاریخ دریافت: 1400/9/14
 \quad
-تاریخ پذیرش: 1400/xx/xx 
-\newline
-\url{http://dx.doi.org/10.22108/MSCI.xxxx}
+تاریخ پذیرش: 1400/10/18 
 }
 \copyrightinfo{}{(دانشگاه اصفهان)}
-%\subjclass[2010]{Analysis; topology}
+
 \makeatletter
 \def\ps@firstpage{\ps@plain
 \def\@oddfoot{\normalfont\small\hfil\thepage\hfil
@@ -188,49 +180,25 @@
 \makeatother
 \begin{document}
 \begin{abstract}
-در این قسمت چکیده مقاله نوشته می شود.
+در این مقاله، به بررسی معماری کامپیوتر، روند توسعه‌ی آن، انواع معماری کامپیوتر و پیشرفت‌های آن می‌پردازیم.
 \end{abstract}
 \maketitle
 \section{مقدمه}
 
-دراین قسمت مقدمه  نوشته می شود.
-\section{متن اصلی}
+\section{معماری کامپیوتر - دیروز تا امروز}
 \vskip 0.4 true cm
-در این قسمت متن اصلی نوشته می شود. در زیر یک متن نمونه نوشته شده است.\\
-در شیوه‌ی پیشنهادی برای وضوح برتر توسط نگارندگان ، هر یک از تصاویر باوضوح بالا، به عنوان تصویر آموزشی، متناظر با قسمتی از تصویرِ باوضوح پایین هستند.  تصاویر آموزشی می‌توانند تفاوتهایی با تصویر اصلی از نقطه نظر شدت روشنائی یا زاویه‌ی اخذ داشته باشند. 
- این تفاوتها می‌تواند ناشی از برداشت عکسها \footnote{یک زیر نویس پارسی}در زمانهای متفاوت و یا با دوربینهای متفاوت و از زوایای مختلف باشد. در این شیوه ابتدا تصویر با وضوح پایین به اندازه‌ی مطلوب بزرگ شده و سپس  تبدیل مناسبی برای نگاشت هر یک از تصاویر آموزشی بر روی تصویر مورد نظر با استفاده از  نقاط کلیدی \lr{SIFT}\LTRfootnote{ Scale Invariant Feature Transform (SIFT)} و الگوریتم \lr{RANSAC}\LTRfootnote{ RANdom SAmple Consensus (RANSAC)} در قالب ماتریس هوموگرافی\LTRfootnote{ Homography matrix} پیدا می‌شود. 
 
-\section{جدول‌ها}
+\section{اجزا}
 \vskip 0.4 true cm
-هر جدول بايد دارای شماره و عنوان (توضيح) باشد، كه به صورت وسط چين در بالاي جدول  شماره‌گذاری می شود. بهتر است جدول‌ها در داخل متن و پس از جايی كه به آنها ارجاع مي‌شود، درج گردند.  هر جدول با يك سطر خالی فاصله از متن ماقبل و مابعد آن قرار گيرد. يك نمونه جدول مطابق دستورالعمل در زير آمده است: (توجه شود كه خود جدول نيز بايد در موقعيت وسط چين نسبت به طرفين كاغذ قرار گيرد).
-\\
 
-\begin{center}
-\par
-\begingroup%
-  \makeatletter
-  \def\@captype{table}%
-  \makeatother
-  \caption{جدول نمونه }%
-\endgroup%
-\begin{tabular}{|c|p{2in}|} 
-\hline عنوان & توضیحات \\ 
-\hline  &  \\ 
-\hline  &  \\ 
-\hline  &  \\ 
-\hline 
-\end{tabular} 
-\end{center}
-
-\section{شكل‌ها و نمودارها}
+\section{معماری‌‌های مختلف}
 \vskip 0.4 true cm
-هر شكل و نمودار بايد دارای شماره و عنوان (توضيح) باشد كه به صورت وسط چين در زير آن با قلم پررنگ  و به ترتيب از 1 شماره‌گذاری می شود. شكل ‌ها در داخل متن و در جايی كه به آنها ارجاع می شود، درج گردند. ذكر واحد كميت‌ها در شكل‌ها الزامی است. در تهيه شكل‌ها توجه كنيد كه اندازه اعداد، واژه‌ها، كميت‌ها و راهنمای منح هر شكل را با يك سطر خالی فاصله از متن ماقبل و مابعد آن قرار دهيد. (توجه شود كه خود شكل ها و نمودارها نيز، همانند جدول ها بايد در موقعيت وسط چين نسبت به طرفين كاغذ قرار گيرند.)
-\\
-\begin{figure}[ht]
-\centering
-\includegraphics[width=55mm]{Fig-1} 
-\caption{\label{shir}\small نمونه شكل }
-\end{figure}
+
+\section{معماری کامپیوتر در آینده}
+\vskip 0.4 true cm
+
+\section{هوش مصنوعی و معماری کامپیوتر}
+\vskip 0.4 true cm
 
 %------------------------------------------------------------------------------------------------
 %نوشتن بیوگرافی نویسندگان الزامی می باشد.
@@ -239,7 +207,7 @@
 \bigskip 
 
 \noindent \rule{.4\linewidth}{0.8pt}\\
-\noindent\footnotesize{\bfseries نام و نام خانوادگی نویسنده اول (اگرمقاله به زبان دیگری باشد نام و نام خانوادگی مترجم) } \\
+\noindent\footnotesize{\bfseries نام و نام خانوادگی نویسنده اول} \\
 \footnotesize{اصفهان، خيابان هزار جريب، دانشگاه اصفهان، گروه ریاضی } \\
 abc@yahoo.com\\\\
 \begin{tabular}{p{2 cm} p{14 cm} }
