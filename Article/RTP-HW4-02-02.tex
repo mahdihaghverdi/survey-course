@@ -1,0 +1,262 @@
+\documentclass[11pt, twoside]{imsproc}
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage[colorlinks,citecolor=blue]{hyperref}
+\setcounter{page}{1}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm,headsep=1.1cm}
+\footskip 0.7cm
+
+%------------------------------------------------------------------------------------%
+\newcommand*{\publname}{
+\begin{tabular}{c}
+\includegraphics[width=1.8cm]{UI-Logo.jpg}\\
+\url{http://www.ui.ac.ir}
+\vspace{0.2cm}
+\end{tabular}
+\hfill
+\begin{tabular}{c}\toprule
+\vspace{0.1cm}
+\scriptsize \bfseries ریاضی و جامعه\\
+\vspace{0.1cm}
+\scriptsize
+شاپا (چاپی): 2345-6493، شاپا(الکترونیکی): 2345-6507 \\
+\vspace{0.1cm}
+\scriptsize
+جلد x، شماره x (1400)، صص. xx-xx\\
+\scriptsize
+\copyright{} 1xxx دانشگاه اصفهان \\ \bottomrule
+\end{tabular}
+\hfill
+\begin{tabular}{c}
+\includegraphics[width=2.2cm]{JMS-Logo.jpg}\\
+\url{http://math-sci.ui.ac.ir}
+\vspace{-0.2cm}
+\end{tabular}
+}
+%------------------------------------------------------------------------------------%
+
+\usepackage[para*]{manyfoot}
+\SetFootnoteHook{\setLTR}
+\DeclareNewFootnote[para]{A}
+\usepackage{xepersian}
+\makeatletter
+\let\c@footnoteA\c@footnote
+\makeatother
+\let\LTRfootnote\footnoteA
+\AtBeginDocument{\label{firstpage}}
+\AtEndDocument{\label{lastpage}}
+\settextfont[Scale=1.1]{XB Niloofar.ttf}
+\setlatintextfont [Scale=0.9]{times new roman.ttf}
+\linespread{1.35}
+\newsavebox\uilogo
+\newsavebox\nologo
+\sbox\uilogo{\includegraphics[width=0.8cm]{UI-Logo.pdf}}
+\sbox\nologo{\includegraphics[width=1cm]{JMS-Logo.jpg}}
+\makeatletter
+\def\seriesno#1{\gdef\@seriesno{#1}}
+\def\issueno#1{\gdef\@issueno{#1}}
+\def\publicationname#1{\gdef\@publicationname{#1}}
+\def\ps@ijheadings{\ps@empty
+  \def\@evenhead{%
+   \parbox{\textwidth}{%
+    \setTrue{runhead}%
+    \normalfont\scriptsize
+    \usebox\uilogo\hfill
+    \def\thanks{\protect\thanks@warning}%
+  \leftmark{}{}, \@publicationname/
+    جلد x،
+   % \@seriesno{}
+    شماره x 
+   % \@issueno
+ (1xxx) \pageref{firstpage}--\pageref{lastpage}
+    \hfill
+   \usebox\nologo\vskip0pt
+     \vskip-7pt
+     \rule{\textwidth}{0.5pt}
+      \vskip-12pt
+        \rule{\textwidth}{0.5pt}
+    }}
+  \def\@oddhead{%
+   \parbox{\textwidth}{%
+    \setTrue{runhead}%
+    \normalfont\scriptsize
+    \usebox\uilogo\hfill
+    \def\thanks{\protect\thanks@warning}%
+    \rightmark{}{}, \@publicationname/
+    جلد x،
+    %\@seriesno{}
+    شماره x 
+    %\@issueno
+ (1xxx) \pageref{firstpage}--\pageref{lastpage}
+    \hfill
+   \usebox\nologo\vskip0pt
+     \vskip-6pt
+     \rule{\textwidth}{0.5pt}
+      \vskip-12pt
+        \rule{\textwidth}{0.5pt}
+    }}
+   \def\@evenfoot{\normalfont\small\thepage
+     \hfill \scriptsize{\url{http://dx.doi.org/10.22108/MSCI.xxxx}}\hfill}
+    \def\@oddfoot{\normalfont\small\hfill\scriptsize{\url{http://dx.doi.org/10.22108/MSCI.xxxx}}\hfill\thepage}
+ }%   
+\def\enddoc@text{%
+\ifx\@empty\@translators \else\@settranslators\fi
+  \ifx\@empty\addresses \else\@setaddresses\fi}
+  
+\renewcommand*{\@makefnmark}{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
+  \def\MFL@fnotepara#1#2#3{\let\@thefnmark\@empty
+    \NCC@makefnmark{\latinfont #2}%
+    \MFL@insert#1{\reset@font\footnotesize
+      \ifx\@thefnmark\@empty \@tempswafalse \else
+        \@tempswatrue
+        \protected@edef\@currentlabel{\@thefnmark}%
+      \fi
+      \color@begingroup
+        \if@tempswa
+          \setbox\@tempboxa\hbox{\@makefnmark}%
+          \ifMFL@paraindent
+            \@tempdima.8em \advance\@tempdima-\wd\@tempboxa
+            \ifdim \@tempdima<\z@ \@tempdima\z@ \fi
+          \else
+            \@tempdima\z@
+          \fi
+        \fi
+        \setbox\@tempboxa\hbox{%
+          \if@tempswa
+            \hskip\@tempdima\unhbox\@tempboxa\nobreak
+          \fi
+          \ignorespaces\resetlatinfont#3\unskip\strut
+          \ifMFL@split \penalty\m@ne\space \else
+            \penalty-10 \hskip\footglue
+          \fi
+        }%
+        \dp\@tempboxa\z@ \ht\@tempboxa\MFL@fudgefactor\wd\@tempboxa
+        \box\@tempboxa
+      \color@endgroup
+    }%
+  }
+\long\def\@footnotetext#1{\insert\footins{%
+   \if@RTL@footnote\@RTLtrue\else\@RTLfalse\fi%
+    \reset@font\tiny
+    \interlinepenalty\interfootnotelinepenalty
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+    \protected@edef\@currentlabel{%
+       \csname p@footnote\endcsname\@thefnmark
+    }%
+    \color@begingroup
+      \@makefntext{%
+        \rule\z@\footnotesep\ignorespaces\if@RTL@footnote#1\else\latinfont#1\fi\@finalstrut\strutbox}%
+    \color@endgroup}}%
+%\footdir@temp\footdir@my@ORG@xepersian@footnotetext\@footnotetext{\bidi@footdir@footnote}%
+\makeatother
+\pagestyle{ijheadings}
+\seriesno{1}
+\issueno{1}
+\publicationname{نشریه ریاضی و جامعه}
+\title{عنوان مقاله}
+\author[نویسنده اول و نویسنده دوم ، مترجم ]
+{ نویسنده اول و $^*$ نویسنده دوم\\
+اگر مقاله به زبان دیگری باشد در اینجا نام مترجم آورده شود}
+
+\thanks{
+عبارات و کلمات کليدي: {کلمات کلیدی آورده شود.}\\
+دبیرتخصصی رابط: -------------\\  
+نوع مقاله: ----------------\\
+تاریخ دریافت: 1400/xx/xx
+\quad
+تاریخ پذیرش: 1400/xx/xx 
+\newline
+\url{http://dx.doi.org/10.22108/MSCI.xxxx}
+}
+\copyrightinfo{}{(دانشگاه اصفهان)}
+%\subjclass[2010]{Analysis; topology}
+\makeatletter
+\def\ps@firstpage{\ps@plain
+\def\@oddfoot{\normalfont\small\hfil\thepage\hfil
+\global\topskip\normaltopskip}%
+\let\@evenfoot\@oddfoot
+\def\@oddhead{\@serieslogo\hss}%
+\let\@evenhead\@oddhead % in case an article starts on a left-hand page
+}
+%%%%%%%%%%%%%%%%%
+\settextfont[Scale=1.1]{Yas}
+%%%%%%%%%%%%%%%%%%%%%%%
+\makeatother
+\begin{document}
+\begin{abstract}
+در این قسمت چکیده مقاله نوشته می شود.
+\end{abstract}
+\maketitle
+\section{مقدمه}
+
+دراین قسمت مقدمه  نوشته می شود.
+\section{متن اصلی}
+\vskip 0.4 true cm
+در این قسمت متن اصلی نوشته می شود. در زیر یک متن نمونه نوشته شده است.\\
+در شیوه‌ی پیشنهادی برای وضوح برتر توسط نگارندگان ، هر یک از تصاویر باوضوح بالا، به عنوان تصویر آموزشی، متناظر با قسمتی از تصویرِ باوضوح پایین هستند.  تصاویر آموزشی می‌توانند تفاوتهایی با تصویر اصلی از نقطه نظر شدت روشنائی یا زاویه‌ی اخذ داشته باشند. 
+ این تفاوتها می‌تواند ناشی از برداشت عکسها \footnote{یک زیر نویس پارسی}در زمانهای متفاوت و یا با دوربینهای متفاوت و از زوایای مختلف باشد. در این شیوه ابتدا تصویر با وضوح پایین به اندازه‌ی مطلوب بزرگ شده و سپس  تبدیل مناسبی برای نگاشت هر یک از تصاویر آموزشی بر روی تصویر مورد نظر با استفاده از  نقاط کلیدی \lr{SIFT}\LTRfootnote{ Scale Invariant Feature Transform (SIFT)} و الگوریتم \lr{RANSAC}\LTRfootnote{ RANdom SAmple Consensus (RANSAC)} در قالب ماتریس هوموگرافی\LTRfootnote{ Homography matrix} پیدا می‌شود. 
+
+\section{جدول‌ها}
+\vskip 0.4 true cm
+هر جدول بايد دارای شماره و عنوان (توضيح) باشد، كه به صورت وسط چين در بالاي جدول  شماره‌گذاری می شود. بهتر است جدول‌ها در داخل متن و پس از جايی كه به آنها ارجاع مي‌شود، درج گردند.  هر جدول با يك سطر خالی فاصله از متن ماقبل و مابعد آن قرار گيرد. يك نمونه جدول مطابق دستورالعمل در زير آمده است: (توجه شود كه خود جدول نيز بايد در موقعيت وسط چين نسبت به طرفين كاغذ قرار گيرد).
+\\
+
+\begin{center}
+\par
+\begingroup%
+  \makeatletter
+  \def\@captype{table}%
+  \makeatother
+  \caption{جدول نمونه }%
+\endgroup%
+\begin{tabular}{|c|p{2in}|} 
+\hline عنوان & توضیحات \\ 
+\hline  &  \\ 
+\hline  &  \\ 
+\hline  &  \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\section{شكل‌ها و نمودارها}
+\vskip 0.4 true cm
+هر شكل و نمودار بايد دارای شماره و عنوان (توضيح) باشد كه به صورت وسط چين در زير آن با قلم پررنگ  و به ترتيب از 1 شماره‌گذاری می شود. شكل ‌ها در داخل متن و در جايی كه به آنها ارجاع می شود، درج گردند. ذكر واحد كميت‌ها در شكل‌ها الزامی است. در تهيه شكل‌ها توجه كنيد كه اندازه اعداد، واژه‌ها، كميت‌ها و راهنمای منح هر شكل را با يك سطر خالی فاصله از متن ماقبل و مابعد آن قرار دهيد. (توجه شود كه خود شكل ها و نمودارها نيز، همانند جدول ها بايد در موقعيت وسط چين نسبت به طرفين كاغذ قرار گيرند.)
+\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=55mm]{Fig-1} 
+\caption{\label{shir}\small نمونه شكل }
+\end{figure}
+
+%------------------------------------------------------------------------------------------------
+%نوشتن بیوگرافی نویسندگان الزامی می باشد.
+
+\bigskip
+\bigskip 
+
+\noindent \rule{.4\linewidth}{0.8pt}\\
+\noindent\footnotesize{\bfseries نام و نام خانوادگی نویسنده اول (اگرمقاله به زبان دیگری باشد نام و نام خانوادگی مترجم) } \\
+\footnotesize{اصفهان، خيابان هزار جريب، دانشگاه اصفهان، گروه ریاضی } \\
+abc@yahoo.com\\\\
+\begin{tabular}{p{2 cm} p{14 cm} }
+\includegraphics[width=20mm]{Image1} 
+&\vspace{-1.5cm}
+\footnotesize
+
+نویسنده اول (یا مترجم) متولد مهرماه ماه 1361 در شهر اصفهان است. وی در سال 1380 وارد مقطع كارشناسی رشته رياضی محض دانشگاه اصفهان شد و در سال 1385 وارد مقطع كارشناسی ارشد رشته رياضی محض شد.\\
+\end{tabular}\\\\
+\noindent\footnotesize{\bfseries نام و نام خانوادگی نویسنده دوم } \\
+\footnotesize{تهران، دانشگاه تهران، گروه ریاضی } \\
+ def@gmail.com\\\\
+\begin{tabular}{p{2 cm} p{14 cm} }
+\includegraphics[width=20mm]{Image2} 
+&\vspace{-1.5cm}
+\footnotesize
+
+نویسنده دوم متولد مرداد ماه 1368 در شهر تهران است. وی در سال 1386 وارد مقطع كارشناسی رشته رياضی كاربردی دانشگاه تهران شد و در سال 1390  وارد مقطع كارشناسی ارشد رشته رياضی كاربردی شد.
+\end{tabular}
+\end{document}
