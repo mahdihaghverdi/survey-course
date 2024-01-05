@@ -1,8 +1,12 @@
 \documentclass[11pt, twoside]{imsproc}
 
+\usepackage[inline]{enumitem}
+
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage{subfigure}
 \usepackage{booktabs}
+\usepackage{float}
 \usepackage[colorlinks,citecolor=blue]{hyperref}
 \setcounter{page}{1}
 \geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm,headsep=1.1cm}
@@ -219,6 +223,89 @@
 
 \end{enumerate}
 
+\section{اجزا}
+\vskip 0.4 true cm
+
+\begin{itemize}
+\item اجزای \lr{CPU}
+
+اگر بخواهیم \lr{CPU} را درنگاه سطح بالا بررسی کنیم، \lr{CPU} از 2 قسمت تشکیل شده:
+\begin{enumerate*}
+\item \lr{Datapath}
+\item \lr{Control Unit}
+\end{enumerate*}
+
+همانطور که در درس معماری کامپیوتر به آن اشاره شد، \lr{Datapath} در واقع مسیری‌ست که برای انجام یک دستورالعمل طی می‌شود و این مسیر شامل قسمت‌های مختلفی، از جمله
+\lr{Register File}،
+\lr{ALU}
+برای انجام محاسبات، چندین مالتی‌پلکسر، واحدهای جمع، عملیات \lr{Extend} و... می‌شود.
+
+قسمت \lr{Control Unit}، یا همان واحد کنترل قسمتی است که \lr{Datapath} را کنترل می‌کند و تعیین می‌کند که \lr{Datapath} دستگاه‌های \lr{I/O} و \lr{Memory} چه کاری انجام بدهند.
+
+از نگاه سطح بالاتر، \lr{CPU} شامل ۴ جز اصلی است:
+\lr{Memory}،
+\lr{Control Unit}،
+\lr{Datapath}
+و دستگاه‌های ورودی/خروجی.
+
+\begin{enumerate}
+\item \lr{Data path}
+
+در این تصویر
+\ref{fig:datapath-red}
+قسمت‌هایی که در بخش \lr{Datapath} طی می‌شوند با خطوط قرمز رنگ مشخص شده‌اند. همانطور که واضح است، \lr{Datapath} شامل جمع کننده، مالتی پلکسر، رجیستر فایل، \lr{Extend} و \lr{ALU} می‌شود.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics*[width=0.9\textwidth, height=0.55\textheight]{images/datapath-red}
+\end{center}
+\caption{\small{\lr{Datapath} در یک نگاه}}
+\label{fig:datapath-red}
+\end{figure}
+
+\item \lr{Control Unit}
+
+وقتی برای یک معماری خاص \lr{Instruction Set} نوشته می‌شود، در واقع به این معنی است که هر \lr{Instruction} از یک سری رجیسترهای خاص استفاده کند و همچنین از مسیر خاصی در  \lr{Datapath} رد بشود. این مسیریابی و کد گشایی و کنترل مسیر گذر یک دستور و داده‌های آن، توسط \lr{Control Unit} انجام می‌شود.
+تمام کارهایی که کنترل یونیت انجام می‌دهد با رنگ آبی در تصویر
+\ref{fig:control-unit-signals}
+ مشخص شده‌اند که شامل سیگنال‌هایی است که با فرستادن صفر و 1 تعیین می‌کنند که یک عملی انجام بشود یا نشود و بدین صورت کنترل یونیت \lr{Datapath} را کنترل می‌کند.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics*[width=0.9\textwidth, height=0.55\textheight]{images/cu}
+\end{center}
+\caption{\small{سیگنال‌های \lr{Control Unit} در \lr{Datapath}}}
+\label{fig:control-unit-signals}
+\end{figure}
+
+\end{enumerate}
+
+\item پردازنده‌ی \lr{AMD Barcelona}
+
+تصویر 
+\ref{fig:barcelona-real}
+معماری پردازنده چند هسته‌ای به نام \lr{AMD Barcelona microprocessor} می‌باشد که شامل ۴ هسته است. در تصویر
+\ref{fig:barcelona-sketch}
+هسته اول آن بطور کامل شرح داده شده است که شامل قسمت‌هایی همچون
+\lr{Fetch/Decode/EXE}،
+\lr{Load/Store}،
+بخش حافظه‌ی \lr{cache} و... است که هرچهار هسته‌ی این پردازنده دقیقاً شامل همین قسمت‌هایی هستند که در هسته اول به آن اشاره شد.
+\begin{figure}[H]
+\begin{center}
+\subfigure
+[عکس واقعی پردازنده]
+{\label{fig:barcelona-real}\includegraphics[width=0.5\textheight, height=0.6\textwidth]{./images/amd-1}
+}
+\hspace{3mm}
+\subfigure
+[نقشه‌ی طراحی پردازنده]
+{\label{fig:barcelona-sketch}\includegraphics[width=0.5\textheight, height=0.6\textwidth]{./images/amd-2}
+}
+\end{center}
+\label{fig:amd-barcelona}
+\end{figure}
+
+\end{itemize}
 %------------------------------------------------------------------------------------------------
 %نوشتن بیوگرافی نویسندگان الزامی می باشد.
 
