@@ -1,0 +1,46 @@
+\documentclass{article}
+% URLs and hyperlinks ---------------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=NavyBlue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{xurl}
+%---------------------------------------------------
+
+\usepackage{float}
+\usepackage{xepersian}
+\settextfont{Yas}
+
+\newcounter{record}
+\newcommand{\step}{\stepcounter{record}\arabic{record}}
+
+\title{گزارش ترم - گروه ۲}
+\author{مهدی حق‌وردی}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{جدول جلسات ترم}
+این جدول از پیام‌ها و جلسات برگزار شده در سامانه‌ی 
+\url{https://lms.ui.ac.ir}
+و سامانه‌ی شاتل استخراج شده‌اند.
+
+\begin{table}[H]
+\begin{center}
+\caption{جدول جلسات ترم}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\step &
+نوع جلسه &
+مکان جلسه &
+تاریخ \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{document}
