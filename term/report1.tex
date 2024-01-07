@@ -1,0 +1,157 @@
+\documentclass{article}
+% URLs and hyperlinks ---------------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=NavyBlue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\usepackage{xurl}
+%---------------------------------------------------
+
+\usepackage{adjustbox}
+\renewcommand{\arraystretch}{1.23}
+\usepackage{float}
+\usepackage{xepersian}
+\settextfont{Yas}
+
+\newcounter{record}
+\newcommand{\step}{\stepcounter{record}\arabic{record}}
+\newcommand{\dateof}[3]{{#1} - 1401/{#3}/{#2}}
+\newcommand{\hourof}[2]{ساعت {#1}:00 تا {#2}:00}
+
+\title{گزارش ترم - گروه 1}
+\author{مهدی حق‌وردی}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{جدول جلسات ترم}
+این جدول از پیام‌ها و جلسات برگزار شده در سامانه‌ی 
+\url{https://lms.ui.ac.ir}
+و سامانه‌ی شاتل استخراج شده‌اند.
+
+\begin{table}[H]
+\caption{جدول جلسات ترم}
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ردیف &
+نوع جلسه &
+شماره جلسه &
+مکان جلسه &
+تاریخ &
+ساعت \\
+\hline
+\hline
+\step &
+حضوری &
+۱ &
+دانشکده &
+\dateof{سه‌شنبه}{4}{7}&
+\hourof{14}{16} \\
+\hline
+\step &
+حضوری &
+۲ &
+دانشکده & 
+\dateof{سه‌شنبه}{۱۸}{۷}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+حضوری &
+۳ &
+دانشکده &
+\dateof{سه‌شنبه}{۲۵}{۷}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+\lr{FLIPPED}&
+4 &
+\lr{lms}&
+\dateof{جمعه}{۵}{۸}&
+- \\
+\hline
+\step &
+حضوری &
+۵ &
+دانشکده &
+\dateof{سه‌شنبه}{۲}{۸}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+حضوری &
+۶ و ۷&
+دانشکده &
+\dateof{سه‌شنبه}{۱۶}{۸}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+آنلاین &
+۸ &
+\lr{lms}&
+\dateof{سه‌شنبه}{۲۳}{۸}&
+\hourof{۱۴}{۱۵} \\
+\hline
+\step &
+آنلاین &
+۹&
+\lr{lms}&
+\dateof{سه‌شنبه}{۲۳}{۸}&
+\hourof{۱۵}{۱۶} \\
+\hline
+\step &
+حضوری &
+۱۰&
+دانشکده&
+\dateof{سه‌شنبه}{۳۰}{۸}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+حضوری &
+۱۱&
+دانشکده&
+\dateof{سه‌شنبه}{۷}{۹}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+آنلاین&
+۱۲&
+\lr{lms}&
+\dateof{سه‌شنبه}{۱۴}{۹}&
+\hourof{۱۵}{۱۶} \\
+\hline
+\step &
+آنلاین &
+۱۳&
+\lr{lms}&
+\dateof{سه‌شنبه}{۲۸}{۹}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+حضوری &
+۱۴&
+دانشکده&
+\dateof{سه‌شنبه}{۵}{۱۰}&
+\hourof{۱۴}{۱۶} \\
+\hline
+\step &
+آنلاین &
+- &
+شاتل&
+\dateof{جمعه}{۸}{۱۰}&
+\hourof{۱۶}{۱۸} \\
+\hline
+\step &
+آنلاین&
+- &
+\lr{lms}&
+\dateof{پنجشنبه}{۱۴}{۱۰}&
+\hourof{۱۶}{۱۸} \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\end{document}
