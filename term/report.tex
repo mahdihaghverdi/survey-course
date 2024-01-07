@@ -10,12 +10,16 @@
 \usepackage{xurl}
 %---------------------------------------------------
 
+\usepackage{adjustbox}
+\renewcommand{\arraystretch}{1.23}
 \usepackage{float}
 \usepackage{xepersian}
 \settextfont{Yas}
 
 \newcounter{record}
 \newcommand{\step}{\stepcounter{record}\arabic{record}}
+\newcommand{\dateof}[3]{{#1} - 1401/{#3}/{#2}}
+\newcommand{\hourof}[2]{ساعت {#1}:00 تا {#2}:00}
 
 \title{گزارش ترم - گروه ۲}
 \author{مهدی حق‌وردی}
@@ -30,17 +34,139 @@
 و سامانه‌ی شاتل استخراج شده‌اند.
 
 \begin{table}[H]
-\begin{center}
 \caption{جدول جلسات ترم}
-\begin{tabular}{|c|c|c|c|}
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ردیف &
+نوع جلسه &
+شماره جلسه &
+مکان جلسه &
+تاریخ &
+ساعت \\
+\hline
 \hline
 \step &
-نوع جلسه &
-مکان جلسه &
-تاریخ \\
+حضوری &
+1 &
+دانشکده &
+\dateof{شنبه}{16}{7} &
+\hourof{16}{18} \\
 \hline
+\step &
+حضوری &
+2 &
+دانشکده &
+\dateof{شنبه}{16}{7}&
+\hourof{16}{18} \\
 \hline
+\step &
+\lr{FLIPPED}& 
+4 &
+آپلود در \lr{lms} &
+\dateof{جمعه}{5}{8}&
+-\\
+\hline
+\step &
+آنلاین &
+- &
+\lr{lms}&
+\dateof{شنبه}{13}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+حضوری &
+۵ &
+دانشکده &
+\dateof{شنبه}{6}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+آنلاین &
+۶ و ۷ &
+\lr{lms} &
+\dateof{شنبه}{13}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+آنلاین &
+- &
+\lr{lms} &
+\dateof{شنبه}{20}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+آنلاین &
+۸ و ۹ &
+\lr{lms} &
+\dateof{شنبه}{20}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+حضوری &
+10 &
+دانشکده &
+\dateof{شنبه}{27}{8}&
+\hourof{16}{18} \\
+\hline
+\step &
+حضوری &
+۱۱ &
+دانشکده &
+\dateof{شنبه}{4}{9}&
+\hourof{16}{18} \\
+\hline
+\step &
+آنلاین &
+۱۲ &
+\lr{lms}&
+\dateof{شنبه}{11}{9}&
+\hourof{19}{20} \\
+\hline
+\step &
+جلسه‌ی آزاد و مشترک &
+- &
+شاتل &
+\dateof{جمعه}{17}{9}&
+\hourof{9}{12} \\
+\hline
+\step &
+آنلاین &
+۱۳ &
+\lr{lms} &
+\dateof{شنبه}{18}{9}&
+\hourof{16}{18} \\
+\hline
+\step &
+آنلاین &
+- &
+\lr{lms} &
+\dateof{پنجشنبه}{۷}{۱۰}&
+\hourof{۱۶}{۱۸} \\
+\hline
+\step &
+آنلاین &
+- &
+شاتل &
+\dateof{جمعه}{8}{10}&
+\hourof{16}{18} \\
+\hline
+\step &
+حضوری &
+۱۵ &
+دانشکده &
+\dateof{شنبه}{9}{10}&
+\hourof{16}{18} \\
+\hline
+\step &
+جلسه آزاد و مشترک&
+- &
+\lr{lms} &
+\dateof{پنجشنبه}{14}{10}&
+\hourof{16}{18} \\
+\hline
+
 \end{tabular}
-\end{center}
+\end{adjustbox}
 \end{table}
 \end{document}
