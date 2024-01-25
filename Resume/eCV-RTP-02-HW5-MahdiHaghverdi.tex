@@ -1,0 +1,80 @@
+\documentclass[letter, 11pt]{article}
+
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+
+% colorbox --------------------------------------------------
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+
+\newcommand{\colourbox}[2]{
+    \tcbox[on line, 
+	 		boxsep=4pt, 
+	 		left=0pt,
+	 		right=0pt,
+	 		top=0pt,
+	 		bottom=-1pt,
+	 		colframe=white,
+	 		colback={#1},  
+	 		size=small
+	]{#2}
+}
+%------------------------------------------------------------
+\definecolor{highlight}{RGB}{68, 2, 191}
+\newcommand{\skill}[1]{{\small\colourbox{highlight}{\textcolor{white}{#1}}}}
+%====================
+% OFFICIAL PUBLIC OVERLEAF TEMPLATE
+% https://www.overleaf.com/latex/templates/data-science-tech-resume-template/zcdmpfxrzjhv
+% 
+%====================
+%
+% Resume template for data scientists, a complement to data-science-tech-cover-letter-template:
+% https://www.overleaf.com/latex/templates/data-science-tech-cover-letter-template/gbrcqktbsfxf
+%
+% Files:        resume.tex: Main file
+%               _header.tex: header code
+%               TLCresume.sty: style file containing formatting details
+%               section/objective: https://www.indeed.com/career-advice/resumes-cover-letters/resume-objective-examples
+%               section/skills: table of skills
+%               section/experience: projects or roles
+%               section/education: schools and stuff
+%               section/activities: optional, could comment out in resume.tex.
+%
+% Editor:       https://github.com/TimmyChan 
+%               https://www.linkedin.com/in/timmy-l-chan/
+%               
+% Last Updated: March 24th, 2022
+%
+%====================
+
+\usepackage{TLCresume}
+
+%====================
+% CONTACT INFORMATION
+%====================
+\def\name{Mahdi Haghverdi}
+\def\phone{+98 9136028987}
+\def\city{Iran, Isfahan}
+\def\email{mahdihaghverdiliewpl@gmail.com}
+\def\github{mahdihaghverdi} % github username
+\def\role{Back-end / Junior Developer}
+
+\input{_header}
+\begin{document}
+\input{sections/objective}
+
+\section{Skills}
+\input{sections/skills}
+
+\section{Projects}
+\input{sections/experience}
+
+\section{Open Source Contribution}
+\input{sections/opensource}
+
+\section{Articles}
+\input{sections/articles}
+
+%\section{Education}
+%\input{sections/education}
+\end{document}

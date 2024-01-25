@@ -1,0 +1,28 @@
+%====================
+% Header: Contact
+%====================
+
+\RequirePackage{fancyhdr}
+\fancypagestyle{fancy}{%
+\fancyhf{}
+\lhead{
+    \phone \\
+    \city \\
+    \href{mailto:\email}{\email}}
+    \chead{
+        \centering {\Huge \skills \name \vspace{.15em}} \\
+        {\color{highlight} \Large{\role}}}
+        \rhead{
+            \href{https://virgool.io/@liewpl}{Persian articles on \textit{virgool}} \\
+            \href{https://medium.com/@mahdihaghverdi}{English articles on \textit{medium}} \\
+            \href{https://github.com/\github}{github.com/\github}
+        } 
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{highlight}\leaders\hrule height \headrulewidth\hfill}}
+}
+\pagestyle{fancy}
+
+\setlength{\headheight}{90pt}
+\setlength{\headsep}{5pt}
